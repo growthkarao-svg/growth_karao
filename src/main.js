@@ -86,24 +86,26 @@ window.addEventListener('scroll', () => {
 
 // Theme Toggle Logic
 const themeToggleBtn = document.getElementById('theme-toggle');
-const currentTheme = localStorage.getItem('theme') || 'dark';
+const currentTheme = localStorage.getItem('theme') || 'light';
 
-if (currentTheme === 'light') {
-  document.body.setAttribute('data-theme', 'light');
+if (currentTheme === 'dark') {
+  document.body.setAttribute('data-theme', 'dark');
+  if (themeToggleBtn) themeToggleBtn.innerText = '☀️';
+} else {
   if (themeToggleBtn) themeToggleBtn.innerText = '🌙';
 }
 
 if (themeToggleBtn) {
   themeToggleBtn.addEventListener('click', () => {
     let theme = document.body.getAttribute('data-theme');
-    if (theme === 'light') {
+    if (theme === 'dark') {
       document.body.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'dark');
-      themeToggleBtn.innerText = '☀️';
-    } else {
-      document.body.setAttribute('data-theme', 'light');
       localStorage.setItem('theme', 'light');
       themeToggleBtn.innerText = '🌙';
+    } else {
+      document.body.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+      themeToggleBtn.innerText = '☀️';
     }
   });
 }
