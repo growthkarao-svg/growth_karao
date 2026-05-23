@@ -1,8 +1,9 @@
 import './style.css'
 
-// Glow effect on service cards
+// Glow effect on service and offer cards
 document.getElementById('app').onmousemove = e => {
-  for(const card of document.getElementsByClassName("service-card")) {
+  const cards = [...document.getElementsByClassName("service-card"), ...document.getElementsByClassName("offer-card")];
+  for(const card of cards) {
     const rect = card.getBoundingClientRect(),
           x = e.clientX - rect.left,
           y = e.clientY - rect.top;
