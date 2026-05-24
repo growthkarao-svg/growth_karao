@@ -75,13 +75,16 @@ const handleScroll = () => {
   const navbar = document.querySelector('.navbar');
   if (!navbar) return;
   if (window.scrollY > 50) {
-    navbar.style.padding = '1rem 4rem';
+    navbar.style.padding = '0.5rem 4rem';
     navbar.style.background = 'var(--navbar-scrolled)';
+    if (window.innerWidth <= 768) {
+        navbar.style.padding = '0.4rem 1.5rem';
+    }
   } else {
-    navbar.style.padding = '1.5rem 4rem';
+    navbar.style.padding = '0.8rem 4rem';
     navbar.style.background = 'var(--navbar-bg)';
     if (window.innerWidth <= 768) {
-        navbar.style.padding = '1rem 2rem';
+        navbar.style.padding = '0.6rem 1.5rem';
     }
   }
 };
