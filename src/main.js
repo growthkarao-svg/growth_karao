@@ -71,8 +71,9 @@ if (statsSection) {
 }
 
 // Navbar scroll effect
-window.addEventListener('scroll', () => {
+const handleScroll = () => {
   const navbar = document.querySelector('.navbar');
+  if (!navbar) return;
   if (window.scrollY > 50) {
     navbar.style.padding = '1rem 4rem';
     navbar.style.background = 'var(--navbar-scrolled)';
@@ -83,14 +84,18 @@ window.addEventListener('scroll', () => {
         navbar.style.padding = '1rem 2rem';
     }
   }
-});
+};
+
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('load', handleScroll);
+handleScroll(); // Run immediately on execution to catch initial scroll state
 
 // Theme Toggle Logic
 const themeToggleBtn = document.getElementById('theme-toggle');
 const currentTheme = localStorage.getItem('theme') || 'light';
 
 if (currentTheme === 'dark') {
-  document.body.setAttribute('data-theme', 'dark');
+  document.documentElement.setAttribute('data-theme', 'dark');
   if (themeToggleBtn) themeToggleBtn.innerText = '☀️';
 } else {
   if (themeToggleBtn) themeToggleBtn.innerText = '🌙';
@@ -98,13 +103,13 @@ if (currentTheme === 'dark') {
 
 if (themeToggleBtn) {
   themeToggleBtn.addEventListener('click', () => {
-    let theme = document.body.getAttribute('data-theme');
+    let theme = document.documentElement.getAttribute('data-theme');
     if (theme === 'dark') {
-      document.body.removeAttribute('data-theme');
+      document.documentElement.removeAttribute('data-theme');
       localStorage.setItem('theme', 'light');
       themeToggleBtn.innerText = '🌙';
     } else {
-      document.body.setAttribute('data-theme', 'dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
       localStorage.setItem('theme', 'dark');
       themeToggleBtn.innerText = '☀️';
     }

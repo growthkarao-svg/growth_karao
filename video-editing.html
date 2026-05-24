@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Editing | GrowthKarao</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="/index.html#home">
+            <img src="/logo.svg" alt="GrowthKarao Logo" class="logo-img" height="70" style="height: 70px;">
+          </a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="/index.html#home">Home</a></li>
+          <li><a href="/index.html#services">Services</a></li>
+          <li><a href="/index.html#work">Our Work</a></li>
+          <li><a href="/offers.html">Offers</a></li>
+          <li><a href="/index.html#contact" class="btn-primary">Let's Talk</a></li>
+          <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">🌙</button></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+
+      <section class="service-hero">
+        <div class="container text-center">
+          <div class="service-badge">Cinematic & Pacing</div>
+          <h1>Video <span class="highlight">Editing</span></h1>
+          <p class="subtitle">We script, pace, and edit high-retention videos and commercial campaigns that grab attention in 1.5 seconds and convert viewers into fans.</p>
+        </div>
+      </section>
+
+      <!-- Video Specialties Breakdown -->
+      <section class="expertise-section">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>Our Editing <span class="highlight">Specialties</span></h2>
+            <p class="section-subtitle">Pacing, SFX, and visuals combined to build absolute customer retention.</p>
+          </div>
+
+          <div class="expertise-grid">
+            <div class="expertise-card">
+              <div class="expertise-icon">🎬</div>
+              <h3>Story-Based Editing</h3>
+              <p>Dynamic story structures, sound effects, and color styles that convert mundane footage into highly engaging short films or brand stories.</p>
+            </div>
+
+            <div class="expertise-card">
+              <div class="expertise-icon">💥</div>
+              <h3>Advanced Motion Graphics</h3>
+              <p>Adding dynamic floating text, tracking assets, custom lower thirds, and premium 2D/3D transitions that elevate video aesthetics immediately.</p>
+            </div>
+
+            <div class="expertise-card">
+              <div class="expertise-icon">📱</div>
+              <h3>Short-Form & Reels</h3>
+              <p>Hook-first pacing, energetic caption matching, sound trends integration, and micro-zoom timings engineered to keep users scrolling on loop.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video Work Section -->
+      <section class="service-work-section">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>Past Video <span class="highlight">Edits</span></h2>
+            <p class="section-subtitle">A showcase of highly engaging Reels, YouTube videos, and high-performance video sales letters we designed.</p>
+          </div>
+
+          <div class="service-work-grid">
+            <div class="service-work-card">
+              <div class="work-card-img-wrapper">
+                <img src="/video_editing.png" alt="Short-Form Video Edit Frame" class="work-card-img">
+                <div class="work-card-badge">Viral Reel</div>
+              </div>
+              <div class="work-card-content">
+                <h3>Viral Short-Form Scaling Series</h3>
+                <p>We edited a series of 15-second growth hacks for a prominent business founder, using zoom cuts, dynamic captions, and background soundscapes that went viral.</p>
+                <div class="work-stats-row">
+                  <div class="work-stat">
+                    <span class="stat-value">1.8M+</span>
+                    <span class="stat-label">Total Views</span>
+                  </div>
+                  <div class="work-stat">
+                    <span class="stat-value">84%</span>
+                    <span class="stat-label">Retention Rate</span>
+                  </div>
+                  <div class="work-stat">
+                    <span class="stat-value">+35K</span>
+                    <span class="stat-label">Followers Gain</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-work-card">
+              <div class="work-card-img-wrapper">
+                <img src="/podcast.png" alt="High Quality Podcast & Long form Video" class="work-card-img">
+                <div class="work-card-badge">Commercial</div>
+              </div>
+              <div class="work-card-content">
+                <h3>Podcast & Long-Form Strategic Cuts</h3>
+                <p>Designed structured motion graphics sequences and visual summaries for high-ticket coaching programs, turning 1-hour shows into engaging masterclass episodes.</p>
+                <div class="work-stats-row">
+                  <div class="work-stat">
+                    <span class="stat-value">4.5x</span>
+                    <span class="stat-label">Sales ROAS</span>
+                  </div>
+                  <div class="work-stat">
+                    <span class="stat-value">76%</span>
+                    <span class="stat-label">Avg Duration</span>
+                  </div>
+                  <div class="work-stat">
+                    <span class="stat-value">+280%</span>
+                    <span class="stat-label">Conversions</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-work-card">
+              <div class="work-card-img-wrapper">
+                <img src="/campaign2.png" alt="Product Launch Video Sales Letter" class="work-card-img">
+                <div class="work-card-badge">Brand Promo</div>
+              </div>
+              <div class="work-card-content">
+                <h3>Aura Pro Cinematic Brand Launch Video</h3>
+                <p>A cinematic product walkthrough VSL incorporating glowing HSL layout overlays, energetic pacing, and sound designs that established premium positioning.</p>
+                <div class="work-stats-row">
+                  <div class="work-stat">
+                    <span class="stat-value">550K+</span>
+                    <span class="stat-label">Reaches</span>
+                  </div>
+                  <div class="work-stat">
+                    <span class="stat-value">5.1%</span>
+                    <span class="stat-label">CTR Boost</span>
+                  </div>
+                  <div class="work-stat">
+                    <span class="stat-value">Cinematic</span>
+                    <span class="stat-label">Pacing</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA / Contact Section -->
+      <section class="cta">
+        <div class="container">
+          <h2>Ready to Create <span class="highlight">Viral Videos?</span></h2>
+          <p>Let's map out high-retention visual storylines and cinematic cuts tailored to scale your brand.</p>
+          <a href="mailto:hello@growthkarao.com?subject=Video%20Editing%20Inquiry" class="btn-primary large">Pitch Your Story Idea</a>
+        </div>
+      </section>
+
+      <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-logo">
+              <img src="/logo.svg" alt="GrowthKarao Logo" class="logo-img footer-logo-img" height="54" style="height: 54px;">
+            </div>
+            <p>&copy; 2026 GrowthKarao. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
