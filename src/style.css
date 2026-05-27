@@ -341,11 +341,22 @@ h2 {
   border: 1px solid rgba(255, 94, 0, 0.15);
 }
 
-.owner-title {
+.owner-name {
   font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: -0.2px;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+.owner-title {
+  font-family: var(--font-body);
   font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   background: linear-gradient(135deg, #ff5e00, #8a2be2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
