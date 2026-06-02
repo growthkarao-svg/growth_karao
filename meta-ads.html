@@ -60,17 +60,42 @@
             <div class="chart-card">
               <div class="chart-header">
                 <div class="chart-titles">
-                  <h3>Lead Scale & Cost Optimization</h3>
-                  <p>5-Month Optimization Trend (Average Client Data)</p>
+                  <h3 id="chart-main-title">ROAS Optimization Trend</h3>
+                  <p id="chart-sub-title">Low marketing spend yielding high Return on Ad Spend (ROAS)</p>
                 </div>
                 <div class="chart-legend">
-                  <div class="legend-item">
-                    <span class="legend-dot lead-volume-dot"></span>
-                    <span>Lead Volume</span>
+                  <!-- ROAS Legend -->
+                  <div class="legend-group active" id="legend-roas">
+                    <div class="legend-item">
+                      <span class="legend-dot return-dot"></span>
+                      <span>Return / ROAS</span>
+                    </div>
+                    <div class="legend-item">
+                      <span class="legend-dot budget-dot"></span>
+                      <span>Ad Spend</span>
+                    </div>
                   </div>
-                  <div class="legend-item">
-                    <span class="legend-dot cpa-rto-dot"></span>
-                    <span>CPA / RTO Rate</span>
+                  <!-- Scaling Legend -->
+                  <div class="legend-group" id="legend-scaling">
+                    <div class="legend-item">
+                      <span class="legend-dot lead-volume-dot"></span>
+                      <span>Lead Volume</span>
+                    </div>
+                    <div class="legend-item">
+                      <span class="legend-dot cpa-rto-dot"></span>
+                      <span>CPA / RTO Rate</span>
+                    </div>
+                  </div>
+                  <!-- Client Work Legend -->
+                  <div class="legend-group" id="legend-clients">
+                    <div class="legend-item">
+                      <span class="legend-dot projects-dot"></span>
+                      <span>Completed Projects</span>
+                    </div>
+                    <div class="legend-item">
+                      <span class="legend-dot brands-dot"></span>
+                      <span>Active Brands</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -79,6 +104,17 @@
                 <svg viewBox="0 0 600 300" class="performance-chart" xmlns="http://www.w3.org/2000/svg">
                   <!-- Definitions for Gradients and Glows -->
                   <defs>
+                    <!-- ROAS View Gradients -->
+                    <linearGradient id="roasReturnGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="rgba(46, 204, 113, 0.4)" />
+                      <stop offset="100%" stop-color="rgba(46, 204, 113, 0.0)" />
+                    </linearGradient>
+                    <linearGradient id="roasBudgetGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="rgba(30, 144, 255, 0.3)" />
+                      <stop offset="100%" stop-color="rgba(30, 144, 255, 0.0)" />
+                    </linearGradient>
+
+                    <!-- Scaling View Gradients -->
                     <linearGradient id="leadGrad" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="0%" stop-color="rgba(46, 204, 113, 0.4)" />
                       <stop offset="100%" stop-color="rgba(46, 204, 113, 0.0)" />
@@ -87,6 +123,17 @@
                       <stop offset="0%" stop-color="rgba(230, 85, 0, 0.3)" />
                       <stop offset="100%" stop-color="rgba(230, 85, 0, 0.0)" />
                     </linearGradient>
+
+                    <!-- Client Work View Gradients -->
+                    <linearGradient id="clientsGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="rgba(138, 43, 226, 0.4)" />
+                      <stop offset="100%" stop-color="rgba(138, 43, 226, 0.0)" />
+                    </linearGradient>
+                    <linearGradient id="brandsGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="rgba(255, 0, 128, 0.3)" />
+                      <stop offset="100%" stop-color="rgba(255, 0, 128, 0.0)" />
+                    </linearGradient>
+
                     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
                       <feGaussianBlur stdDeviation="6" result="blur" />
                       <feComposite in="SourceGraphic" in2="blur" operator="over" />
@@ -100,87 +147,174 @@
                   <line x1="50" y1="200" x2="550" y2="200" class="chart-grid" />
                   <line x1="50" y1="250" x2="550" y2="250" class="chart-grid-base" />
 
-                  <!-- Grid X Axis Labels (Months) -->
-                  <text x="50" y="275" class="chart-label text-center">Month 1</text>
-                  <text x="175" y="275" class="chart-label text-center">Month 2</text>
-                  <text x="300" y="275" class="chart-label text-center">Month 3</text>
-                  <text x="425" y="275" class="chart-label text-center">Month 4</text>
-                  <text x="550" y="275" class="chart-label text-center">Month 5</text>
+                  <!-- View 1: ROAS (Active by default) -->
+                  <g class="chart-view active" id="view-roas">
+                    <!-- Grid X Axis Labels (Weeks) -->
+                    <text x="50" y="275" class="chart-label text-center">Week 1</text>
+                    <text x="175" y="275" class="chart-label text-center">Week 2</text>
+                    <text x="300" y="275" class="chart-label text-center">Week 3</text>
+                    <text x="425" y="275" class="chart-label text-center">Week 4</text>
+                    <text x="550" y="275" class="chart-label text-center">Week 5</text>
 
-                  <!-- Y Axis Labels Left (Leads) -->
-                  <text x="20" y="55" class="chart-label-y">5K</text>
-                  <text x="20" y="105" class="chart-label-y">4K</text>
-                  <text x="20" y="155" class="chart-label-y">3K</text>
-                  <text x="20" y="205" class="chart-label-y">2K</text>
-                  <text x="20" y="255" class="chart-label-y">1K</text>
+                    <!-- Y Axis Labels Left (Return/ROAS) -->
+                    <text x="20" y="55" class="chart-label-y">6x</text>
+                    <text x="20" y="105" class="chart-label-y">4.8x</text>
+                    <text x="20" y="155" class="chart-label-y">3.5x</text>
+                    <text x="20" y="205" class="chart-label-y">2.2x</text>
+                    <text x="20" y="255" class="chart-label-y">1x</text>
 
-                  <!-- Y Axis Labels Right (CPA/RTO %) -->
-                  <text x="565" y="55" class="chart-label-y">40%</text>
-                  <text x="565" y="105" class="chart-label-y">30%</text>
-                  <text x="565" y="155" class="chart-label-y">20%</text>
-                  <text x="565" y="205" class="chart-label-y">10%</text>
-                  <text x="565" y="255" class="chart-label-y">5%</text>
+                    <!-- Y Axis Labels Right (Ad Spend) -->
+                    <text x="565" y="55" class="chart-label-y">$10K</text>
+                    <text x="565" y="105" class="chart-label-y">$8K</text>
+                    <text x="565" y="155" class="chart-label-y">$6K</text>
+                    <text x="565" y="205" class="chart-label-y">$4K</text>
+                    <text x="565" y="255" class="chart-label-y">$2K</text>
 
-                  <!-- Area under Lead Volume Path -->
-                  <path d="M 50 250 L 50 220 Q 175 190 300 130 T 550 60 L 550 250 Z" fill="url(#leadGrad)" />
-                  
-                  <!-- Area under CPA / RTO Path -->
-                  <path d="M 50 80 Q 175 110 300 160 T 550 230 L 550 250 L 50 250 Z" fill="url(#cpaGrad)" opacity="0.5" />
+                    <!-- Area under Paths -->
+                    <path d="M 50 240 Q 175 190 300 120 T 550 60 L 550 250 L 50 250 Z" fill="url(#roasReturnGrad)" />
+                    <path d="M 50 230 Q 175 220 300 215 T 550 220 L 550 250 L 50 250 Z" fill="url(#roasBudgetGrad)" opacity="0.4" />
 
-                  <!-- Lead Volume Line -->
-                  <path d="M 50 220 Q 175 190 300 130 T 550 60" fill="none" class="chart-line-leads" filter="url(#glow)" />
-                  
-                  <!-- CPA / RTO Line -->
-                  <path d="M 50 80 Q 175 110 300 160 T 550 230" fill="none" class="chart-line-cpa" filter="url(#glow)" />
+                    <!-- Lines -->
+                    <path d="M 50 240 Q 175 190 300 120 T 550 60" fill="none" class="chart-line-leads" filter="url(#glow)" />
+                    <path d="M 50 230 Q 175 220 300 215 T 550 220" fill="none" class="chart-line-budget" filter="url(#glow)" />
 
-                  <!-- Interactive Dots (Lead Volume) -->
-                  <circle cx="50" cy="220" r="5" class="chart-dot-leads" />
-                  <circle cx="175" cy="190" r="5" class="chart-dot-leads" />
-                  <circle cx="300" cy="130" r="5" class="chart-dot-leads" />
-                  <circle cx="425" cy="90" r="5" class="chart-dot-leads" />
-                  <circle cx="550" cy="60" r="5" class="chart-dot-leads" />
+                    <!-- Dots (Return) -->
+                    <circle cx="50" cy="240" r="5" class="chart-dot-leads" />
+                    <circle cx="175" cy="190" r="5" class="chart-dot-leads" />
+                    <circle cx="300" cy="120" r="5" class="chart-dot-leads" />
+                    <circle cx="425" cy="85" r="5" class="chart-dot-leads" />
+                    <circle cx="550" cy="60" r="5" class="chart-dot-leads" />
 
-                  <!-- Interactive Dots (CPA / RTO) -->
-                  <circle cx="50" cy="80" r="5" class="chart-dot-cpa" />
-                  <circle cx="175" cy="110" r="5" class="chart-dot-cpa" />
-                  <circle cx="300" cy="160" r="5" class="chart-dot-cpa" />
-                  <circle cx="425" cy="205" r="5" class="chart-dot-cpa" />
-                  <circle cx="550" cy="230" r="5" class="chart-dot-cpa" />
+                    <!-- Dots (Ad Spend) -->
+                    <circle cx="50" cy="230" r="5" class="chart-dot-budget" />
+                    <circle cx="175" cy="220" r="5" class="chart-dot-budget" />
+                    <circle cx="300" cy="215" r="5" class="chart-dot-budget" />
+                    <circle cx="425" cy="225" r="5" class="chart-dot-budget" />
+                    <circle cx="550" cy="220" r="5" class="chart-dot-budget" />
+                  </g>
+
+                  <!-- View 2: Scaling -->
+                  <g class="chart-view" id="view-scaling">
+                    <!-- Grid X Axis Labels (Months) -->
+                    <text x="50" y="275" class="chart-label text-center">Month 1</text>
+                    <text x="175" y="275" class="chart-label text-center">Month 2</text>
+                    <text x="300" y="275" class="chart-label text-center">Month 3</text>
+                    <text x="425" y="275" class="chart-label text-center">Month 4</text>
+                    <text x="550" y="275" class="chart-label text-center">Month 5</text>
+
+                    <!-- Y Axis Labels Left (Leads) -->
+                    <text x="20" y="55" class="chart-label-y">5K</text>
+                    <text x="20" y="105" class="chart-label-y">4K</text>
+                    <text x="20" y="155" class="chart-label-y">3K</text>
+                    <text x="20" y="205" class="chart-label-y">2K</text>
+                    <text x="20" y="255" class="chart-label-y">1K</text>
+
+                    <!-- Y Axis Labels Right (CPA/RTO %) -->
+                    <text x="565" y="55" class="chart-label-y">40%</text>
+                    <text x="565" y="105" class="chart-label-y">30%</text>
+                    <text x="565" y="155" class="chart-label-y">20%</text>
+                    <text x="565" y="205" class="chart-label-y">10%</text>
+                    <text x="565" y="255" class="chart-label-y">5%</text>
+
+                    <!-- Area under Lead Volume Path -->
+                    <path d="M 50 240 C 100 200, 125 140, 175 140 C 225 140, 250 190, 300 190 C 350 190, 375 90, 425 90 C 475 90, 500 70, 550 60 L 550 250 L 50 250 Z" fill="url(#leadGrad)" />
+                    <!-- Area under CPA / RTO Path -->
+                    <path d="M 50 70 C 100 80, 125 130, 175 130 C 225 130, 250 100, 300 100 C 350 100, 375 180, 425 180 C 475 180, 500 220, 550 230 L 550 250 L 50 250 Z" fill="url(#cpaGrad)" opacity="0.5" />
+
+                    <!-- Lead Volume Line -->
+                    <path d="M 50 240 C 100 200, 125 140, 175 140 C 225 140, 250 190, 300 190 C 350 190, 375 90, 425 90 C 475 90, 500 70, 550 60" fill="none" class="chart-line-leads" filter="url(#glow)" />
+                    <!-- CPA / RTO Line -->
+                    <path d="M 50 70 C 100 80, 125 130, 175 130 C 225 130, 250 100, 300 100 C 350 100, 375 180, 425 180 C 475 180, 500 220, 550 230" fill="none" class="chart-line-cpa" filter="url(#glow)" />
+
+                    <!-- Interactive Dots (Lead Volume) -->
+                    <circle cx="50" cy="240" r="5" class="chart-dot-leads" />
+                    <circle cx="175" cy="140" r="5" class="chart-dot-leads" />
+                    <circle cx="300" cy="190" r="5" class="chart-dot-leads" />
+                    <circle cx="425" cy="90" r="5" class="chart-dot-leads" />
+                    <circle cx="550" cy="60" r="5" class="chart-dot-leads" />
+
+                    <!-- Interactive Dots (CPA / RTO) -->
+                    <circle cx="50" cy="70" r="5" class="chart-dot-cpa" />
+                    <circle cx="175" cy="130" r="5" class="chart-dot-cpa" />
+                    <circle cx="300" cy="100" r="5" class="chart-dot-cpa" />
+                    <circle cx="425" cy="180" r="5" class="chart-dot-cpa" />
+                    <circle cx="550" cy="230" r="5" class="chart-dot-cpa" />
+                  </g>
+
+                  <!-- View 3: Client Work -->
+                  <g class="chart-view" id="view-clients">
+                    <!-- Grid X Axis Labels (Years) -->
+                    <text x="50" y="275" class="chart-label text-center">2022</text>
+                    <text x="175" y="275" class="chart-label text-center">2023</text>
+                    <text x="300" y="275" class="chart-label text-center">2024</text>
+                    <text x="425" y="275" class="chart-label text-center">2025</text>
+                    <text x="550" y="275" class="chart-label text-center">2026</text>
+
+                    <!-- Y Axis Labels Left (Active Brands) -->
+                    <text x="20" y="55" class="chart-label-y">100</text>
+                    <text x="20" y="105" class="chart-label-y">80</text>
+                    <text x="20" y="155" class="chart-label-y">60</text>
+                    <text x="20" y="205" class="chart-label-y">40</text>
+                    <text x="20" y="255" class="chart-label-y">20</text>
+
+                    <!-- Y Axis Labels Right (Completed Projects) -->
+                    <text x="565" y="55" class="chart-label-y">250+</text>
+                    <text x="565" y="105" class="chart-label-y">200</text>
+                    <text x="565" y="155" class="chart-label-y">150</text>
+                    <text x="565" y="205" class="chart-label-y">100</text>
+                    <text x="565" y="255" class="chart-label-y">50</text>
+
+                    <!-- Area under Projects Path -->
+                    <path d="M 50 250 L 50 230 Q 175 190 300 130 T 550 60 L 550 250 Z" fill="url(#clientsGrad)" />
+                    <!-- Area under Brands Path -->
+                    <path d="M 50 240 Q 175 210 300 170 T 550 90 L 550 250 L 50 250 Z" fill="url(#brandsGrad)" opacity="0.4" />
+
+                    <!-- Completed Projects Line -->
+                    <path d="M 50 230 Q 175 190 300 130 T 550 60" fill="none" class="chart-line-projects" filter="url(#glow)" />
+                    <!-- Active Brands Line -->
+                    <path d="M 50 240 Q 175 210 300 170 T 550 90" fill="none" class="chart-line-brands" filter="url(#glow)" />
+
+                    <!-- Interactive Dots (Projects) -->
+                    <circle cx="50" cy="230" r="5" class="chart-dot-projects" />
+                    <circle cx="175" cy="190" r="5" class="chart-dot-projects" />
+                    <circle cx="300" cy="130" r="5" class="chart-dot-projects" />
+                    <circle cx="425" cy="95" r="5" class="chart-dot-projects" />
+                    <circle cx="550" cy="60" r="5" class="chart-dot-projects" />
+
+                    <!-- Interactive Dots (Brands) -->
+                    <circle cx="50" cy="240" r="5" class="chart-dot-brands" />
+                    <circle cx="175" cy="210" r="5" class="chart-dot-brands" />
+                    <circle cx="300" cy="170" r="5" class="chart-dot-brands" />
+                    <circle cx="425" cy="130" r="5" class="chart-dot-brands" />
+                    <circle cx="550" cy="90" r="5" class="chart-dot-brands" />
+                  </g>
                 </svg>
               </div>
             </div>
 
-            <!-- Dashboard Metric Sidebar Cards -->
+            <!-- Dashboard Metric Sidebar Cards (Hover triggers) -->
             <div class="metrics-sidebar">
-              <div class="metric-mini-card">
-                <div class="metric-icon green">📈</div>
-                <div class="metric-details">
-                  <h4>+280% Lead Scaling</h4>
-                  <p>Average increase in overall monthly qualified leads over 90 days.</p>
-                </div>
-              </div>
-              
-              <div class="metric-mini-card">
-                <div class="metric-icon orange">🔥</div>
-                <div class="metric-details">
-                  <h4>-45% Average CPA</h4>
-                  <p>Decreasing Cost Per Acquisition via deep campaign structuring.</p>
-                </div>
-              </div>
-              
-              <div class="metric-mini-card">
-                <div class="metric-icon purple">🛡️</div>
-                <div class="metric-details">
-                  <h4>RTO Down to 8.5%</h4>
-                  <p>Return to Origin (RTO) drops via address verification and WhatsApp flows.</p>
-                </div>
-              </div>
-              
-              <div class="metric-mini-card">
-                <div class="metric-icon red">💎</div>
+              <div class="metric-mini-card active" data-target-view="roas">
+                <div class="metric-icon green">💎</div>
                 <div class="metric-details">
                   <h4>4.8x Average ROAS</h4>
-                  <p>Consistently driving target margins across multiple client niches.</p>
+                  <p>Low budget, high return. Maximizing profit margins by targeting high-converting lead segments.</p>
+                </div>
+              </div>
+              
+              <div class="metric-mini-card" data-target-view="scaling">
+                <div class="metric-icon orange">📈</div>
+                <div class="metric-details">
+                  <h4>+280% Lead Scaling</h4>
+                  <p>Scale leads and sales volume systematically while keeping acquisition costs optimized.</p>
+                </div>
+              </div>
+              
+              <div class="metric-mini-card" data-target-view="clients">
+                <div class="metric-icon purple">💼</div>
+                <div class="metric-details">
+                  <h4>Client Work: 200+</h4>
+                  <p>Successfully managed and scaled ad campaigns for over 200+ high-growth brands.</p>
                 </div>
               </div>
             </div>
@@ -196,27 +330,27 @@
             <p class="section-subtitle">A look into real-world Meta Ads performance and design creatives we built for high-growth clients.</p>
           </div>
 
-          <div class="service-work-grid">
+          <div class="service-work-grid" style="max-width: 1200px; margin: 4rem auto 0;">
             <div class="service-work-card">
               <div class="work-card-img-wrapper">
-                <img src="/campaign1.png" alt="E-Commerce Fashion Scale-up" class="work-card-img">
-                <div class="work-card-badge">E-Commerce</div>
+                <img src="/awadh_zeera.png" alt="Awadh Zeera Case Study" class="work-card-img" style="object-position: center; object-fit: cover;">
+                <div class="work-card-badge">Beverage / FMCG</div>
               </div>
               <div class="work-card-content">
-                <h3>VogueX: Scaling apparel brand to 6-figures</h3>
-                <p>We completely restructured their Meta Ads account, introduced lookalike modeling, dynamic format ads, and highly aesthetic hooks, achieving scaling milestones.</p>
+                <h3>Awadh Zeera: Scaling North India's Favorite Masala Soda</h3>
+                <p>We designed and executed a regional brand building and distributor acquisition funnel for Awadh Zeera ("Swad Bhi Sehat Bhi"). By leveraging high-impact vernacular video creatives and localized Meta Lead Forms targeting distributors and retailers in Uttar Pradesh, we successfully expanded their commercial footprint.</p>
                 <div class="work-stats-row">
                   <div class="work-stat">
-                    <span class="stat-value">5.2x</span>
-                    <span class="stat-label">ROAS</span>
+                    <span class="stat-value">6.4x</span>
+                    <span class="stat-label">Sales ROAS</span>
                   </div>
                   <div class="work-stat">
-                    <span class="stat-value">-32%</span>
-                    <span class="stat-label">CPA Drop</span>
+                    <span class="stat-value">+350%</span>
+                    <span class="stat-label">B2B Dealer Leads</span>
                   </div>
                   <div class="work-stat">
-                    <span class="stat-value">6.8%</span>
-                    <span class="stat-label">RTO Rate</span>
+                    <span class="stat-value">-42%</span>
+                    <span class="stat-label">Cost/Lead (CPA)</span>
                   </div>
                 </div>
               </div>
@@ -224,24 +358,24 @@
 
             <div class="service-work-card">
               <div class="work-card-img-wrapper">
-                <img src="/campaign2.png" alt="Aura Pro Tech Launch" class="work-card-img">
-                <div class="work-card-badge">B2B Leads</div>
+                <img src="/school_education.jpg" alt="Education Sector Case Study" class="work-card-img" style="object-position: center; object-fit: cover;">
+                <div class="work-card-badge">Education Sector</div>
               </div>
               <div class="work-card-content">
-                <h3>Aura Pro: Dynamic SaaS Tech Launch</h3>
-                <p>We designed highly focused Lead Generation funnels using custom Meta Lead Forms, paired with qualification questionnaires that ensured high-intent meetings.</p>
+                <h3>Education Industry: Scaling Institution Admissions</h3>
+                <p>We collaborated with multiple schools, colleges, and coaching academies to scale student enrollment inquiries. By building demographic-targeted campaigns, student/parent video testimonials, and structured WhatsApp assistance flows, we generated high-intent admissions queries.</p>
                 <div class="work-stats-row">
                   <div class="work-stat">
-                    <span class="stat-value">4.1x</span>
-                    <span class="stat-label">Sales ROI</span>
+                    <span class="stat-value">4.2x</span>
+                    <span class="stat-label">Admission ROI</span>
                   </div>
                   <div class="work-stat">
-                    <span class="stat-value">+310%</span>
-                    <span class="stat-label">Leads Volume</span>
+                    <span class="stat-value">12K+</span>
+                    <span class="stat-label">Student Leads</span>
                   </div>
                   <div class="work-stat">
-                    <span class="stat-value">-48%</span>
-                    <span class="stat-label">Cost/Lead</span>
+                    <span class="stat-value">-35%</span>
+                    <span class="stat-label">Cost/Enquiry</span>
                   </div>
                 </div>
               </div>
@@ -249,24 +383,24 @@
 
             <div class="service-work-card">
               <div class="work-card-img-wrapper">
-                <img src="/meta_ads.png" alt="High Ticket Brand Campaign" class="work-card-img">
-                <div class="work-card-badge">Local Leads</div>
+                <img src="/local_market.jpg" alt="Local Retail Case Study" class="work-card-img" style="object-position: center; object-fit: cover;">
+                <div class="work-card-badge">Local Retail</div>
               </div>
               <div class="work-card-content">
-                <h3>VibeGym: Driving High-Ticket Memberships</h3>
-                <p>Targeted hyper-local campaigns focusing on premium video testimonials, combined with highly persuasive copy that spoke directly to Bindki & Gurgaon communities.</p>
+                <h3>Local Retail: Viral Campaign for Regional Showroom</h3>
+                <p>We executed a hyper-local viral video campaign for a premier regional electronics and textile showroom. By scriptwriting, shooting, and editing engaging walkthrough reels, and amplifying them with targeted local Meta Ads, we generated massive digital buzz and offline walk-ins.</p>
                 <div class="work-stats-row">
                   <div class="work-stat">
-                    <span class="stat-value">6.1x</span>
-                    <span class="stat-label">ROAS</span>
+                    <span class="stat-value">5.8x</span>
+                    <span class="stat-label">Store Sales ROI</span>
                   </div>
                   <div class="work-stat">
-                    <span class="stat-value">-40%</span>
-                    <span class="stat-label">CPA Drop</span>
+                    <span class="stat-value">3.2M+</span>
+                    <span class="stat-label">Local Reel Views</span>
                   </div>
                   <div class="work-stat">
-                    <span class="stat-value">2.4k+</span>
-                    <span class="stat-label">Leads Generated</span>
+                    <span class="stat-value">+240%</span>
+                    <span class="stat-label">Footfall Increase</span>
                   </div>
                 </div>
               </div>

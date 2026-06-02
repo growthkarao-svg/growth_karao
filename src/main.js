@@ -118,3 +118,72 @@ if (themeToggleBtn) {
     }
   });
 }
+
+// Interactive Performance Chart Transitions
+const metricCards = document.querySelectorAll('.metric-mini-card');
+const chartMainTitle = document.getElementById('chart-main-title');
+const chartSubTitle = document.getElementById('chart-sub-title');
+const chartViews = document.querySelectorAll('.chart-view');
+const legendGroups = document.querySelectorAll('.legend-group');
+
+if (metricCards.length > 0) {
+  if (chartMainTitle) chartMainTitle.style.transition = 'opacity 0.2s ease-in-out';
+  if (chartSubTitle) chartSubTitle.style.transition = 'opacity 0.2s ease-in-out';
+
+  const chartTitlesMap = {
+    roas: {
+      title: 'ROAS Optimization Trend',
+      subtitle: 'Low marketing spend yielding high Return on Ad Spend (ROAS)'
+    },
+    scaling: {
+      title: 'Lead Scale & Cost Optimization',
+      subtitle: '5-Month Optimization Trend (Average Client Data)'
+    },
+    clients: {
+      title: 'Campaigns Completed & Scaled',
+      subtitle: 'Growth in successfully managed accounts & brands (200+ clients)'
+    }
+  };
+
+  metricCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      const targetView = card.getAttribute('data-target-view');
+      if (!targetView || card.classList.contains('active')) return;
+
+      // Update active card
+      metricCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+
+      // Update chart titles with fade transition
+      if (chartMainTitle && chartSubTitle && chartTitlesMap[targetView]) {
+        chartMainTitle.style.opacity = '0';
+        chartSubTitle.style.opacity = '0';
+        
+        setTimeout(() => {
+          chartMainTitle.textContent = chartTitlesMap[targetView].title;
+          chartSubTitle.textContent = chartTitlesMap[targetView].subtitle;
+          chartMainTitle.style.opacity = '1';
+          chartSubTitle.style.opacity = '1';
+        }, 200);
+      }
+
+      // Update SVG views
+      chartViews.forEach(view => {
+        if (view.id === `view-${targetView}`) {
+          view.classList.add('active');
+        } else {
+          view.classList.remove('active');
+        }
+      });
+
+      // Update Legends
+      legendGroups.forEach(legend => {
+        if (legend.id === `legend-${targetView}`) {
+          legend.classList.add('active');
+        } else {
+          legend.classList.remove('active');
+        }
+      });
+    });
+  });
+}

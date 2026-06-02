@@ -1208,6 +1208,29 @@ footer p {
 }
 
 /* SVG Line Chart Paths & Glows */
+.chart-view {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(10px);
+}
+
+.chart-view.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Legend switching */
+.chart-legend .legend-group {
+  display: none;
+  gap: 1.5rem;
+}
+
+.chart-legend .legend-group.active {
+  display: flex;
+}
+
 .chart-line-leads {
   stroke: #2ecc71;
   stroke-width: 4;
@@ -1217,6 +1240,27 @@ footer p {
 
 .chart-line-cpa {
   stroke: #ff5e00;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chart-line-budget {
+  stroke: #1e90ff;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chart-line-projects {
+  stroke: #8a2be2;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chart-line-brands {
+  stroke: #ff0080;
   stroke-width: 4;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -1246,6 +1290,83 @@ footer p {
 .chart-dot-cpa:hover {
   r: 8px;
   stroke-width: 3.5px;
+}
+
+.chart-dot-budget {
+  fill: #1e90ff;
+  stroke: var(--surface-color);
+  stroke-width: 2.5;
+  transition: r 0.2s ease, stroke-width 0.2s ease;
+  cursor: pointer;
+}
+
+.chart-dot-budget:hover {
+  r: 8px;
+  stroke-width: 3.5px;
+}
+
+.chart-dot-projects {
+  fill: #8a2be2;
+  stroke: var(--surface-color);
+  stroke-width: 2.5;
+  transition: r 0.2s ease, stroke-width 0.2s ease;
+  cursor: pointer;
+}
+
+.chart-dot-projects:hover {
+  r: 8px;
+  stroke-width: 3.5px;
+}
+
+.chart-dot-brands {
+  fill: #ff0080;
+  stroke: var(--surface-color);
+  stroke-width: 2.5;
+  transition: r 0.2s ease, stroke-width 0.2s ease;
+  cursor: pointer;
+}
+
+.chart-dot-brands:hover {
+  r: 8px;
+  stroke-width: 3.5px;
+}
+
+/* Dots in legend */
+.return-dot {
+  background-color: #2ecc71;
+  box-shadow: 0 0 8px rgba(46, 204, 113, 0.6);
+}
+
+.budget-dot {
+  background-color: #1e90ff;
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.6);
+}
+
+.projects-dot {
+  background-color: #8a2be2;
+  box-shadow: 0 0 8px rgba(138, 43, 226, 0.6);
+}
+
+.brands-dot {
+  background-color: #ff0080;
+  box-shadow: 0 0 8px rgba(255, 0, 128, 0.6);
+}
+
+/* Active sidebar card states */
+.metric-mini-card {
+  cursor: pointer;
+}
+
+.metric-mini-card.active {
+  border-color: var(--accent-color);
+  box-shadow: 0 15px 35px var(--accent-glow);
+  background: rgba(230, 85, 0, 0.02);
+}
+
+[data-theme="dark"] .metric-mini-card.active {
+  background: rgba(255, 94, 0, 0.05);
+  border-color: var(--accent-color);
+  box-shadow: 0 15px 35px var(--accent-glow);
 }
 
 /* Dashboard Sidebar Cards */
