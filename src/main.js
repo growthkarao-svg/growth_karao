@@ -24,49 +24,52 @@ if (hamburger) {
   });
 }
 
-// Number Counter Animation
-const counters = document.querySelectorAll('.counter');
-const speed = 200; // The lower the slower
-
+// Number Counter Animation (requestAnimationFrame)
 const animateCounters = () => {
+  const counters = document.querySelectorAll('.counter');
   counters.forEach(counter => {
-    const updateCount = () => {
-      const target = +counter.getAttribute('data-target');
-      const count = +counter.innerText;
+    const target = +counter.getAttribute('data-target');
+    const duration = 2000; // 2 seconds uniform duration
+    const startTime = performance.now();
+    
+    const updateCount = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
       
-      const inc = target / speed;
+      // Easing function (easeOutQuad)
+      const ease = progress * (2 - progress);
+      const currentValue = Math.floor(ease * target);
       
-      if (count < target) {
-        counter.innerText = Math.ceil(count + inc);
-        setTimeout(updateCount, 20);
+      counter.innerText = currentValue;
+      
+      if (progress < 1) {
+        requestAnimationFrame(updateCount);
       } else {
         counter.innerText = target;
       }
     };
     
-    updateCount();
+    requestAnimationFrame(updateCount);
   });
 };
 
-// Intersection Observer for scroll animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px"
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      if (entry.target.classList.contains('stats')) {
-        animateCounters();
-        observer.unobserve(entry.target);
-      }
-    }
-  });
-}, observerOptions);
-
+// Intersection Observer for stats scroll triggers
 const statsSection = document.querySelector('.stats');
 if (statsSection) {
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px"
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        observer.unobserve(statsSection);
+      }
+    });
+  }, observerOptions);
+  
   observer.observe(statsSection);
 }
 
@@ -97,25 +100,74 @@ handleScroll(); // Run immediately on execution to catch initial scroll state
 const themeToggleBtn = document.getElementById('theme-toggle');
 const currentTheme = localStorage.getItem('theme') || 'light';
 
+const updateThemeToggleUI = (theme) => {
+  if (!themeToggleBtn) return;
+  const iconSpan = themeToggleBtn.querySelector('.theme-icon');
+  const labelSpan = themeToggleBtn.querySelector('.theme-label');
+  
+  if (theme === 'dark') {
+    if (iconSpan) {
+      iconSpan.innerText = '☀️';
+      iconSpan.style.transform = 'rotate(180deg)';
+    }
+    if (labelSpan) labelSpan.innerText = 'Light Mode';
+  } else {
+    if (iconSpan) {
+      iconSpan.innerText = '🌙';
+      iconSpan.style.transform = 'rotate(0deg)';
+    }
+    if (labelSpan) labelSpan.innerText = 'Dark Mode';
+  }
+};
+
 if (currentTheme === 'dark') {
   document.documentElement.setAttribute('data-theme', 'dark');
-  if (themeToggleBtn) themeToggleBtn.innerText = '☀️';
+  updateThemeToggleUI('dark');
 } else {
-  if (themeToggleBtn) themeToggleBtn.innerText = '🌙';
+  updateThemeToggleUI('light');
 }
 
 if (themeToggleBtn) {
   themeToggleBtn.addEventListener('click', () => {
     let theme = document.documentElement.getAttribute('data-theme');
-    if (theme === 'dark') {
-      document.documentElement.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'light');
-      themeToggleBtn.innerText = '🌙';
-    } else {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
-      themeToggleBtn.innerText = '☀️';
+    const iconSpan = themeToggleBtn.querySelector('.theme-icon');
+    if (iconSpan) {
+      iconSpan.style.transform = 'rotate(360deg)';
     }
+    
+    setTimeout(() => {
+      if (theme === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        updateThemeToggleUI('light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        updateThemeToggleUI('dark');
+      }
+    }, 150);
+  });
+}
+
+// Contact Form Submission
+const leadForm = document.getElementById('lead-form');
+const formSuccess = document.getElementById('form-success');
+
+if (leadForm && formSuccess) {
+  leadForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Disable submit button & show loading state
+    const submitBtn = leadForm.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.innerText;
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'Submitting...';
+    
+    // Simulate API request delay
+    setTimeout(() => {
+      leadForm.style.display = 'none';
+      formSuccess.style.display = 'block';
+    }, 1200);
   });
 }
 
