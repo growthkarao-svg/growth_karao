@@ -24,5 +24,6 @@ dist-ssr
 *.sw?
 
 # Large Media Files
+public/videos/
 public/*.mp4
 *.mp4
