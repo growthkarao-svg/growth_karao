@@ -149,27 +149,6 @@ if (themeToggleBtn) {
   });
 }
 
-// Contact Form Submission
-const leadForm = document.getElementById('lead-form');
-const formSuccess = document.getElementById('form-success');
-
-if (leadForm && formSuccess) {
-  leadForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Disable submit button & show loading state
-    const submitBtn = leadForm.querySelector('button[type="submit"]');
-    const originalBtnText = submitBtn.innerText;
-    submitBtn.disabled = true;
-    submitBtn.innerText = 'Submitting...';
-    
-    // Simulate API request delay
-    setTimeout(() => {
-      leadForm.style.display = 'none';
-      formSuccess.style.display = 'block';
-    }, 1200);
-  });
-}
 
 // Interactive Performance Chart Transitions
 const metricCards = document.querySelectorAll('.metric-mini-card');
