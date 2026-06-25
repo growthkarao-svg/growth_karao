@@ -428,7 +428,7 @@ h2 {
 
 /* Services */
 .services {
-  padding: 8rem 0;
+  padding: 4.5rem 0;
   position: relative;
 }
 
@@ -633,7 +633,7 @@ h2 {
 
 /* Work */
 .work {
-  padding: 8rem 0;
+  padding: 4.5rem 0;
 }
 
 .bento-grid {
@@ -756,7 +756,7 @@ h2 {
 
 /* Stats */
 .stats {
-  padding: 6rem 0;
+  padding: 3.5rem 0;
   background: var(--stats-bg);
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
@@ -795,7 +795,7 @@ h2 {
 
 /* Address Section */
 .address-section {
-  padding: 8rem 0;
+  padding: 4.5rem 0;
   position: relative;
 }
 
@@ -2022,7 +2022,7 @@ section[id] {
 
 /* Process Section layout */
 .process-section {
-  padding: 8rem 0;
+  padding: 4.5rem 0;
   position: relative;
   background: radial-gradient(1000px circle at top left, var(--purple-glow) 0%, transparent 60%);
 }
@@ -2119,7 +2119,7 @@ section[id] {
 
 /* Testimonials Layout styles */
 .testimonials {
-  padding: 8rem 0;
+  padding: 4.5rem 0;
   position: relative;
   background: var(--stats-bg);
 }
@@ -2196,7 +2196,7 @@ section[id] {
 
 /* Contact Section Layout */
 .contact-section {
-  padding: 8rem 0;
+  padding: 4.5rem 0;
   position: relative;
   background: radial-gradient(1000px circle at bottom right, var(--accent-glow) 0%, transparent 60%);
 }
@@ -2404,7 +2404,7 @@ section[id] {
 
 /* Rich footer layouts */
 .footer-rich {
-  padding: 7rem 0 3rem;
+  padding: 4rem 0 2rem;
   border-top: 1px solid var(--border-color);
   background: var(--footer-bg);
 }
