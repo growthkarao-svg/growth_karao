@@ -218,3 +218,39 @@ if (metricCards.length > 0) {
     });
   });
 }
+
+// Contact Form WhatsApp Redirect
+const contactForm = document.getElementById('contact-form-el');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const name = document.getElementById('form-name').value;
+    const email = document.getElementById('form-email').value;
+    const phone = document.getElementById('form-phone').value;
+    const serviceSelect = document.getElementById('form-service');
+    const service = serviceSelect.options[serviceSelect.selectedIndex].text;
+    const message = document.getElementById('form-message').value;
+    
+    const formattedText = `Hello GrowthKarao Team,
+
+I would like to start scaling my brand. Here are my details:
+• Name: ${name}
+• Email: ${email}
+• Phone: ${phone}
+• Required Service: ${service}
+• Brand Details: ${message}`;
+
+    const encodedText = encodeURIComponent(formattedText);
+    const whatsappUrl = `https://wa.me/919696798102?text=${encodedText}`;
+    
+    // Redirect to WhatsApp
+    window.open(whatsappUrl, '_blank');
+    
+    // Reset form after a slight delay
+    setTimeout(() => {
+      contactForm.reset();
+    }, 500);
+  });
+}
+
