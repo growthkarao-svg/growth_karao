@@ -2428,7 +2428,7 @@ section[id] {
 }
 
 .footer-col p {
-  color: var(--text-secondary);
+  color: #ffffff;
   font-size: 0.95rem;
   line-height: 1.65;
 }
@@ -2476,7 +2476,7 @@ section[id] {
 }
 
 .footer-links a {
-  color: var(--text-secondary);
+  color: #ffffff;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 600;
@@ -2529,7 +2529,7 @@ section[id] {
 }
 
 .footer-bottom p {
-  color: var(--text-secondary);
+  color: #ffffff;
   font-size: 0.9rem;
   font-weight: 500;
 }
