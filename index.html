@@ -24,15 +24,13 @@
   <div id="app">
     <nav class="navbar">
       <div class="logo">
-        <a href="#home">
-          <img src="logo.svg" alt="GrowthKarao Logo" class="logo-img" height="56" style="height: 56px;">
-        </a>
+        <a href="#home">GrowthKarao</a>
       </div>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#work">Our Work</a></li>
-        <li><a href="offers.html">Offers</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#address">Offices</a></li>
         <li><a href="#contact" class="btn-primary">Let's Talk</a></li>
         <li>
           <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
@@ -50,31 +48,40 @@
     <section id="home" class="hero">
       <div class="container hero-container">
         <div class="hero-content-left">
-          <h1>We Don't Just Build Campaigns.<br><span class="highlight">We Build Growth.</span></h1>
-          <p>GrowthKarao is a premium advertising agency driving measurable results through stunning creatives and data-driven strategies.</p>
+          <span class="hero-eyebrow">DELHI NCR & UP &middot; PERFORMANCE MARKETING AGENCY</span>
+          <h1>We don't just build campaigns.<br><span class="highlight">We build growth.</span></h1>
+          <p class="hero-desc">GrowthKarao is a premium advertising agency driving measurable results through stunning creatives and data-driven Meta & Google Ads strategy &mdash; for brands ready to scale.</p>
           <div class="hero-buttons">
             <a href="#contact" class="btn-primary large">Let's Talk</a>
             <a href="#work" class="btn-secondary large">View Our Work</a>
           </div>
         </div>
         <div class="hero-content-right">
-          <div class="owner-frame">
-            <img src="owner.jpg" alt="Founder of GrowthKarao" class="owner-img">
-            <div class="owner-badge">
-              <span class="owner-name">Ritik Omer</span>
-              <span class="owner-title">Founder of GrowthKarao</span>
-              <ul class="owner-highlights">
+          <div class="hero-owner-bw-frame">
+            <img src="owner.jpg" alt="Founder of GrowthKarao" class="owner-img-bw">
+          </div>
+        </div>
+        
+        <div class="hero-footer-wrapper">
+          <hr class="hero-divider">
+          <div class="founder-horizontal-banner">
+            <div class="founder-avatar">RO</div>
+            <div class="founder-info">
+              <div class="founder-meta">
+                <span class="founder-name">Ritik Omer</span>
+                <span class="founder-role">&mdash; Founder, GrowthKarao</span>
+                <span class="founder-ex-meta">Ex-Meta Ads Strategist</span>
+              </div>
+              <ul class="founder-bullets">
                 <li><span>✓</span> 5+ Years Brand Scaling</li>
-                <li><span>✓</span> Managed 50M+ Ad Spend</li>
-                <li><span>✓</span> Ex-Meta Ads Strategist</li>
+                <li><span>✓</span> &#8377;50M+ Ad Spend Managed</li>
+                <li><span>✓</span> 120+ Campaigns Launched</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
       <div class="hero-bg">
-        <img src="hero_light.png" alt="GrowthKarao Light Theme Abstract Background" class="hero-img-light">
-        <img src="hero_new.png" alt="GrowthKarao Dark Theme Abstract Background" class="hero-img-dark">
         <div class="overlay"></div>
       </div>
     </section>
@@ -83,137 +90,97 @@
       <div class="container">
         <div class="stats-grid">
           <div class="stat-item">
-            <h3 class="counter" data-target="250">0</h3>
+            <h3 class="counter-static">38+</h3>
             <p>Clients Scaled</p>
           </div>
           <div class="stat-item">
-            <h3 class="counter" data-target="50">0</h3><span>M+</span>
+            <h3 class="counter-static">&#8377;5.2Cr+</h3>
             <p>Ad Spend Managed</p>
           </div>
           <div class="stat-item">
-            <h3 class="counter" data-target="99">0</h3><span>%</span>
+            <h3 class="counter-static">91%</h3>
             <p>Client Retention</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="counter-static">4.6x</h3>
+            <p>Avg. Client ROAS</p>
           </div>
         </div>
       </div>
     </section>
-
     <section id="services" class="services">
       <div class="container">
-        <h2 style="text-align: center; margin-bottom: 4rem;">Our <span class="highlight">Expertise</span></h2>
-        <div class="services-grid">
+        <div class="services-header">
+          <span class="services-eyebrow">OUR EXPERTISE</span>
+          <h2>Six disciplines, one growth engine</h2>
+          <p class="services-subtitle">Facebook, Instagram, Google, YouTube &mdash; har platform pe targeted strategy jo actual customers laaye, design se delivery tak.</p>
+        </div>
+        <div class="services-editorial-grid">
           <!-- Card 1 -->
-          <a href="meta-ads.html" class="service-card" data-service="meta">
-            <div class="service-card-arrow">→</div>
-            <div class="service-image-container">
-              <img src="digital%20marketing.jpg" alt="Digital Marketing & Ads" class="service-card-img">
-            </div>
-            <div class="service-card-content">
-              <h3>Digital Marketing & Ads</h3>
-              <p class="service-desc">Facebook, Instagram, Google, YouTube — har platform pe targeted ads jo actual customers laayein.</p>
-              <div class="service-tags">
-                <span class="service-tag">Facebook Ads</span>
-                <span class="service-tag">Google Ads</span>
-                <span class="service-tag">YouTube Ads</span>
-                <span class="service-tag">Lead Gen</span>
-                <span class="service-tag">Retargeting</span>
-                <span class="service-tag">Meta Ads</span>
-              </div>
+          <a href="meta-ads.html" class="service-card service-editorial-card">
+            <span class="service-num">01</span>
+            <h3>Digital Marketing & Ads</h3>
+            <p>Har platform pe targeted ads jo actual customers laayein.</p>
+            <div class="service-editorial-tags">
+              <span>Facebook Ads</span>
+              <span>Google Ads</span>
+              <span>Lead Gen</span>
+              <span>Retargeting</span>
             </div>
           </a>
-
           <!-- Card 2 -->
-          <a href="#contact" class="service-card" data-service="design">
-            <div class="service-card-arrow">→</div>
-            <div class="service-image-container">
-              <img src="social%20media.jpg" alt="Social Media Management" class="service-card-img">
-            </div>
-            <div class="service-card-content">
-              <h3>Social Media Management</h3>
-              <p class="service-desc">Poora Instagram, Facebook, LinkedIn page handle karte hain. Content, reels, engagement — sab.</p>
-              <div class="service-tags">
-                <span class="service-tag">Page Management</span>
-                <span class="service-tag">Reels & Posts</span>
-                <span class="service-tag">Follower Growth</span>
-                <span class="service-tag">Engagement</span>
-                <span class="service-tag">Community</span>
-              </div>
+          <a href="#contact" class="service-card service-editorial-card">
+            <span class="service-num">02</span>
+            <h3>Social Media Management</h3>
+            <p>Poora Instagram, Facebook, LinkedIn page handle karte hain &mdash; content, reels, engagement.</p>
+            <div class="service-editorial-tags">
+              <span>Reels & Posts</span>
+              <span>Follower Growth</span>
+              <span>Community</span>
             </div>
           </a>
-
           <!-- Card 3 -->
-          <a href="design.html" class="service-card" data-service="design">
-            <div class="service-card-arrow">→</div>
-            <div class="service-image-container">
-              <img src="brand%20identity.jpg" alt="Branding & Identity" class="service-card-img">
-            </div>
-            <div class="service-card-content">
-              <h3>Branding & Identity</h3>
-              <p class="service-desc">Logo se lekar brand guide tak — aisi identity jo aapko market mein alag dikhaye.</p>
-              <div class="service-tags">
-                <span class="service-tag">Logo Design</span>
-                <span class="service-tag">Brand Identity</span>
-                <span class="service-tag">Brochure</span>
-                <span class="service-tag">Business Card</span>
-                <span class="service-tag">Brand Guide</span>
-              </div>
+          <a href="design.html" class="service-card service-editorial-card">
+            <span class="service-num">03</span>
+            <h3>Branding & Identity</h3>
+            <p>Logo se lekar brand guide tak &mdash; identity jo market mein alag dikhaye.</p>
+            <div class="service-editorial-tags">
+              <span>Logo Design</span>
+              <span>Brand Guide</span>
+              <span>Brochure</span>
             </div>
           </a>
-
           <!-- Card 4 -->
-          <a href="design.html" class="service-card" data-service="design">
-            <div class="service-card-arrow">→</div>
-            <div class="service-image-container">
-              <img src="website.jpg" alt="Website & Online Presence" class="service-card-img">
-            </div>
-            <div class="service-card-content">
-              <h3>Website & Online Presence</h3>
-              <p class="service-desc">Professional websites jo visitors ko customers mein convert karein. SEO ke saath.</p>
-              <div class="service-tags">
-                <span class="service-tag">Website Dev</span>
-                <span class="service-tag">Landing Pages</span>
-                <span class="service-tag">SEO</span>
-                <span class="service-tag">Google Business</span>
-                <span class="service-tag">Domain Setup</span>
-              </div>
+          <a href="design.html" class="service-card service-editorial-card">
+            <span class="service-num">04</span>
+            <h3>Website & Online Presence</h3>
+            <p>Professional websites jo visitors ko customers mein convert karein &mdash; SEO ke saath.</p>
+            <div class="service-editorial-tags">
+              <span>Website Dev</span>
+              <span>Landing Pages</span>
+              <span>SEO</span>
             </div>
           </a>
-
           <!-- Card 5 -->
-          <a href="video-editing.html" class="service-card" data-service="video">
-            <div class="service-card-arrow">→</div>
-            <div class="service-image-container">
-              <img src="editing.jpg" alt="Content Creation" class="service-card-img">
-            </div>
-            <div class="service-card-content">
-              <h3>Content Creation</h3>
-              <p class="service-desc">Photo shoots, video production, ad creatives — visual content jo brand ko powerful banaye.</p>
-              <div class="service-tags">
-                <span class="service-tag">Photo Shoot</span>
-                <span class="service-tag">Video Production</span>
-                <span class="service-tag">Ad Creatives</span>
-                <span class="service-tag">Promo Videos</span>
-                <span class="service-tag">Thumbnails</span>
-              </div>
+          <a href="video-editing.html" class="service-card service-editorial-card">
+            <span class="service-num">05</span>
+            <h3>Content Creation</h3>
+            <p>Photo shoots, video production, ad creatives &mdash; visual content jo brand ko powerful banaye.</p>
+            <div class="service-editorial-tags">
+              <span>Video Production</span>
+              <span>Ad Creatives</span>
+              <span>Thumbnails</span>
             </div>
           </a>
-
           <!-- Card 6 -->
-          <a href="offers.html" class="service-card" data-service="meta">
-            <div class="service-card-arrow">→</div>
-            <div class="service-image-container">
-              <img src="strategy.jpg" alt="Strategy & Consulting" class="service-card-img">
-            </div>
-            <div class="service-card-content">
-              <h3>Strategy & Consulting</h3>
-              <p class="service-desc">Market research, competitor analysis, aur growth planning jo business ko next level le jaaye.</p>
-              <div class="service-tags">
-                <span class="service-tag">Market Research</span>
-                <span class="service-tag">Competitor Analysis</span>
-                <span class="service-tag">Growth Plan</span>
-                <span class="service-tag">Strategy</span>
-                <span class="service-tag">Consulting</span>
-              </div>
+          <a href="offers.html" class="service-card service-editorial-card">
+            <span class="service-num">06</span>
+            <h3>Strategy & Consulting</h3>
+            <p>Market research, competitor analysis, aur growth planning jo business ko next level le jaaye.</p>
+            <div class="service-editorial-tags">
+              <span>Market Research</span>
+              <span>Growth Plan</span>
+              <span>Consulting</span>
             </div>
           </a>
         </div>
@@ -222,48 +189,43 @@
 
     <section id="work" class="work">
       <div class="container">
-        <h2 style="text-align: center; margin-bottom: 4rem;">Selected <span class="highlight">Campaigns</span></h2>
-        <div class="bento-grid">
-          <!-- Card 1: Awadh Zeera (Large wide box) -->
-          <div class="bento-item awadh-bento">
-            <span class="work-badge">4.8x ROAS</span>
-            <img src="awadh_zeera.png" alt="Awadh Zeera Marketing Campaign" class="bento-media">
-            <div class="work-info">
+        <div class="work-header">
+          <span class="work-eyebrow">SELECTED CAMPAIGNS</span>
+          <h2>Results, not just creative</h2>
+          <p class="work-subtitle">Real numbers from real partner brands &mdash; every campaign tied to a measurable business outcome.</p>
+        </div>
+        <div class="editorial-campaigns-grid">
+          <!-- Card 1 -->
+          <div class="campaign-editorial-card">
+            <div class="campaign-metric-block">
+              <span>4.8x ROAS</span>
+            </div>
+            <div class="campaign-content-block">
+              <span class="campaign-category">META ADS &middot; B2B ACQUISITION</span>
               <h3>Awadh Zeera: Masala Soda Scaling</h3>
-              <p>Meta Ads & B2B Distributor Acquisition Funnel</p>
+              <p>Distributor acquisition funnel + reel campaign that took a regional FMCG brand to multi-state retail.</p>
             </div>
           </div>
-
-          <!-- Card 2: Video Case Study (Tall vertical video box) -->
-          <div class="bento-item video-bento">
-            <span class="work-badge">Reel Campaign</span>
-            <video autoplay muted loop playsinline class="bento-media">
-              <source src="https://ritik.growthkarao.com/video3.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="work-info">
-              <h3>D2C Short-Form Video Scaling</h3>
-              <p>Direct response viral reel editing & placement</p>
+          <!-- Card 2 -->
+          <div class="campaign-editorial-card">
+            <div class="campaign-metric-block">
+              <span>-40% CAC</span>
+            </div>
+            <div class="campaign-content-block">
+              <span class="campaign-category">LEAD GEN &middot; EDUCATION</span>
+              <h3>Multi-Campus Admissions</h3>
+              <p>Demographic parent hooks + WhatsApp funnels cut student acquisition cost by 40% in one semester.</p>
             </div>
           </div>
-
-          <!-- Card 3: Education Admissions (Square box) -->
-          <div class="bento-item education-bento">
-            <span class="work-badge">-40% CAC</span>
-            <img src="school_education.jpg" alt="Education Enrollment Campaign" class="bento-media">
-            <div class="work-info">
-              <h3>Education Admissions</h3>
-              <p>Multi-Campus Student Enrollment Funnels</p>
+          <!-- Card 3 -->
+          <div class="campaign-editorial-card">
+            <div class="campaign-metric-block">
+              <span>+350% Traffic</span>
             </div>
-          </div>
-
-          <!-- Card 4: Local Retail (Square box) -->
-          <div class="bento-item retail-bento">
-            <span class="work-badge">+350% Traffic</span>
-            <img src="local_market.jpg" alt="Local Retail Viral Campaign" class="bento-media">
-            <div class="work-info">
+            <div class="campaign-content-block">
+              <span class="campaign-category">HYPER-LOCAL VIDEO</span>
               <h3>Showroom Footfall Growth</h3>
-              <p>Hyper-Local Video Ad walkthroughs</p>
+              <p>Localized video ad walkthroughs drove a 3.5x jump in store visits for an EV showroom client.</p>
             </div>
           </div>
         </div>
@@ -392,111 +354,92 @@
 
     <section id="contact" class="contact-section">
       <div class="container contact-container-split">
-        <div class="contact-header">
-          <h2>Connect <span class="highlight">Here</span></h2>
-          <p class="contact-subtitle">Reach out to our team directly or fill out the form for a custom proposal.</p>
-        </div>
-
         <div class="contact-split-grid">
           <!-- Left: Connect Channels -->
-          <div class="contact-split-col">
-            <h3 class="contact-col-title">Get in Touch</h3>
-            <p style="color: var(--text-secondary); margin-bottom: 2rem; text-align: left;">
-              Have questions, need custom design solutions, or want to discuss your next scaling campaign? Reach out to our team directly or check out our socials.
+          <div class="contact-split-col left-align">
+            <span class="contact-eyebrow">CONNECT HERE</span>
+            <h2>Let's talk growth</h2>
+            <p class="contact-desc">
+              Reach out directly or fill the form &mdash; we usually reply within a few hours on business days.
             </p>
-            <div class="contact-cards-stack">
-              <!-- Email Card -->
-              <a href="mailto:hello@growthkarao.com" class="contact-card-item-horizontal">
-                <div class="contact-card-icon">
-                  <svg class="contact-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                    <polyline points="22,6 12,13 2,6"/>
-                  </svg>
+            <div class="contact-channels-list">
+              <div class="contact-channel-row">
+                <div class="contact-channel-icon-circle">
+                  <!-- Email icon -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 </div>
-                <div class="contact-card-info-horizontal">
-                  <h4>General Inquiries</h4>
-                  <p class="contact-card-value">hello@growthkarao.com</p>
+                <div class="contact-channel-details">
+                  <span class="channel-label">GENERAL INQUIRIES</span>
+                  <span class="channel-value"><a href="mailto:hello@growthkarao.com">hello@growthkarao.com</a></span>
                 </div>
-              </a>
+              </div>
 
-              <!-- Phone Card -->
-              <a href="tel:+919696798102" class="contact-card-item-horizontal">
-                <div class="contact-card-icon">
-                  <svg class="contact-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                  </svg>
+              <div class="contact-channel-row">
+                <div class="contact-channel-icon-circle">
+                  <!-- Phone icon -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 </div>
-                <div class="contact-card-info-horizontal">
-                  <h4>Direct Strategy Line</h4>
-                  <p class="contact-card-value">+91 96967 98102</p>
+                <div class="contact-channel-details">
+                  <span class="channel-label">DIRECT STRATEGY LINE</span>
+                  <span class="channel-value"><a href="tel:+919696798102">+91 96967 98102</a></span>
                 </div>
-              </a>
+              </div>
 
-              <!-- Instagram Card -->
-              <a href="https://instagram.com/growthkarao" target="_blank" rel="noopener noreferrer" class="contact-card-item-horizontal">
-                <div class="contact-card-icon">
-                  <svg class="contact-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                  </svg>
+              <div class="contact-channel-row">
+                <div class="contact-channel-icon-circle">
+                  <!-- WhatsApp / chat icon -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
                 </div>
-                <div class="contact-card-info-horizontal">
-                  <h4>Instagram</h4>
-                  <p class="contact-card-value">@growthkarao</p>
+                <div class="contact-channel-details">
+                  <span class="channel-label">WHATSAPP</span>
+                  <span class="channel-value"><a href="https://wa.me/919696798102" target="_blank">Chat on WhatsApp</a></span>
                 </div>
-              </a>
+              </div>
+            </div>
 
-              <!-- YouTube Card -->
-              <a href="https://youtube.com/@growthkarao" target="_blank" rel="noopener noreferrer" class="contact-card-item-horizontal">
-                <div class="contact-card-icon">
-                  <svg class="contact-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.95 1.96C5.12 19.5 12 19.5 12 19.5s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 11.75a29 29 0 0 0-.46-5.33z"/>
-                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/>
-                  </svg>
-                </div>
-                <div class="contact-card-info-horizontal">
-                  <h4>YouTube</h4>
-                  <p class="contact-card-value">GrowthKarao</p>
-                </div>
-              </a>
+            <div class="contact-social-buttons">
+              <a href="https://instagram.com/growthkarao" target="_blank" class="btn-social-outline">Instagram</a>
+              <a href="https://youtube.com/@growthkarao" target="_blank" class="btn-social-outline">YouTube</a>
             </div>
           </div>
 
           <!-- Right: Start Scaling Form -->
           <div class="contact-split-col">
-            <h3 class="contact-col-title">Start Scaling</h3>
-            <form class="contact-form" id="contact-form-el">
-              <div class="form-group">
-                <label for="form-name">Full Name</label>
-                <input type="text" id="form-name" placeholder="John Doe" required />
-              </div>
-              <div class="form-group">
-                <label for="form-email">Work Email</label>
-                <input type="email" id="form-email" placeholder="john@company.com" required />
-              </div>
-              <div class="form-group">
-                <label for="form-phone">Phone / WhatsApp</label>
-                <input type="tel" id="form-phone" placeholder="+91 99999 99999" required />
-              </div>
-              <div class="form-group">
-                <label for="form-service">Required Service</label>
-                <select id="form-service" required>
-                  <option value="" disabled selected>Select a Service</option>
-                  <option value="ads">Digital Marketing & Ads</option>
-                  <option value="smm">Social Media Management</option>
-                  <option value="branding">Branding & Identity</option>
-                  <option value="web">Website & Online Presence</option>
-                  <option value="content">Content Creation</option>
-                  <option value="strategy">Strategy & Consulting</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="form-message">Tell Us About Your Brand</label>
-                <textarea id="form-message" rows="4" placeholder="Briefly describe your business goals, current monthly spend, or design requirements..." required></textarea>
-              </div>
-              <button type="submit" class="btn-primary form-submit-btn">Send Message →</button>
-            </form>
+            <div class="contact-form-container-editorial">
+              <form class="contact-form" id="contact-form-el">
+                <div class="form-group-editorial">
+                  <label for="form-name">Your Name</label>
+                  <input type="text" id="form-name" placeholder="Full name" required />
+                </div>
+                <div class="form-group-editorial">
+                  <label for="form-business">Business Type</label>
+                  <select id="form-business" required>
+                    <option value="" disabled selected>Select your industry</option>
+                    <option value="ecom">E-commerce / D2C</option>
+                    <option value="retail">Local Retail / Showroom</option>
+                    <option value="education">Education / Academics</option>
+                    <option value="b2b">B2B / Distributor</option>
+                    <option value="other">Other Brand</option>
+                  </select>
+                </div>
+                <div class="form-group-editorial">
+                  <label for="form-budget">Monthly Budget Range</label>
+                  <select id="form-budget" required>
+                    <option value="" disabled selected>Select budget range</option>
+                    <option value="low">Under &#8377;1 Lakh</option>
+                    <option value="mid">&#8377;1 Lakh - &#8377;5 Lakhs</option>
+                    <option value="high">&#8377;5 Lakhs - &#8377;10 Lakhs</option>
+                    <option value="scale">&#8377;10 Lakhs+</option>
+                  </select>
+                </div>
+                <div class="form-group-editorial">
+                  <label for="form-phone">Phone Number</label>
+                  <input type="tel" id="form-phone" placeholder="+91" required />
+                </div>
+                <button type="submit" class="btn-primary form-submit-btn-editorial">Send Inquiry</button>
+              </form>
+              <p class="form-footer-note">We'll get back to you within 24 hours. No spam, ever.</p>
+            </div>
           </div>
         </div>
       </div>

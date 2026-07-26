@@ -226,31 +226,29 @@ if (contactForm) {
     e.preventDefault();
     
     const name = document.getElementById('form-name').value;
-    const email = document.getElementById('form-email').value;
+    const businessSelect = document.getElementById('form-business');
+    const business = businessSelect.options[businessSelect.selectedIndex].text;
+    const budgetSelect = document.getElementById('form-budget');
+    const budget = budgetSelect.options[budgetSelect.selectedIndex].text;
     const phone = document.getElementById('form-phone').value;
-    const serviceSelect = document.getElementById('form-service');
-    const service = serviceSelect.options[serviceSelect.selectedIndex].text;
-    const message = document.getElementById('form-message').value;
     
     const formattedText = `Hello GrowthKarao Team,
-
+ 
 I would like to start scaling my brand. Here are my details:
 • Name: ${name}
-• Email: ${email}
-• Phone: ${phone}
-• Required Service: ${service}
-• Brand Details: ${message}`;
-
+• Business Type: ${business}
+• Monthly Budget Range: ${budget}
+• Phone: ${phone}`;
+ 
     const encodedText = encodeURIComponent(formattedText);
     const whatsappUrl = `https://wa.me/919696798102?text=${encodedText}`;
     
     // Redirect to WhatsApp
     window.open(whatsappUrl, '_blank');
     
-    // Reset form after a slight delay
+    // Reset form after a delay
     setTimeout(() => {
       contactForm.reset();
     }, 500);
   });
 }
-
