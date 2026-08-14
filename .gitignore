@@ -28,11 +28,4 @@ public/videos/
 public/*.mp4
 *.mp4
 
-# Theme files (temporarily ignored)
-design.html
-meta-ads.html
-offers.html
-video-editing.html
-src/
-public/
-theme_index.html
+

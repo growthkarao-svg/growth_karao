@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="growthkarao-favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graphic Designing | GrowthKarao</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html#home">GrowthKarao</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#work">Our Work</a></li>
+          <li><a href="index.html#insights">Insights</a></li>
+          <li><a href="index.html#address">Offices</a></li>
+          <li><a href="index.html#contact" class="btn-primary">Let's Talk</a></li>
+
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+
+      <section class="service-hero">
+        <div class="container service-hero-container">
+          <div class="service-hero-content">
+            <div class="service-badge">Creative Direction</div>
+            <h1>Graphic <span class="highlight">Designing</span></h1>
+            <p class="subtitle">We create premium visual designs, high-converting infographic banners, and cohesive brand styling that establish instant authority and drive actions.</p>
+          </div>
+          <div class="service-hero-visual">
+            <div class="service-hero-frame">
+              <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c" alt="Graphic Design Creative Showcases">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Creative Expertise Breakdown -->
+      <section class="expertise-section">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>Our Creative <span class="highlight">Focus</span></h2>
+            <p class="section-subtitle">We don't just make things look pretty; we design elements with deep strategic intention.</p>
+          </div>
+
+          <div class="expertise-grid">
+            <div class="expertise-card">
+              <div class="expertise-icon">📊</div>
+              <h3>Infographic Banners</h3>
+              <p>Condensing complex product details and conversion data into eye-catching, easily readable visuals that dramatically increase dwell time and engagement.</p>
+            </div>
+
+            <div class="expertise-card">
+              <div class="expertise-icon">⚡</div>
+              <h3>Digital Ad Creatives</h3>
+              <p>High-converting social graphics specifically engineered for Meta, Instagram, and Google ads that grab immediate attention and boost click-through rates.</p>
+            </div>
+
+            <div class="expertise-card">
+              <div class="expertise-icon">🎨</div>
+              <h3>Modern Style Guides</h3>
+              <p>Building cohesive brand style guides including custom color combinations, premium typography matching, and unique layout systems that build absolute brand recall.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Creative Portfolio Section -->
+      <section class="service-work-section">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>Past Creative <span class="highlight">Works</span></h2>
+            <p class="section-subtitle">A showcase of design systems, brand guidelines, and high-impact digital graphics we've shipped.</p>
+          </div>
+
+          <div class="service-work-grid">
+            <div class="service-work-card">
+              <div class="work-card-img-wrapper">
+                <img src="awadh_zeera.png" alt="Awadh Zeera Brand Showcase" class="work-card-img" style="object-position: center; object-fit: cover;">
+                <div class="work-card-badge">Packaging & Identity</div>
+              </div>
+              <div class="work-card-content">
+                <h3>Awadh Zeera Complete Brand & Packaging Design</h3>
+                <p>We designed the premium visual identity, retail packaging labels, and digital ad creative styles for Awadh Zeera, establishing a powerful look that scaled their sales.</p>
+                <div class="work-stats-row">
+                  <div class="work-stat">
+                    <span class="stat-value">4.8x</span>
+                    <span class="stat-label">Average ROAS</span>
+                  </div>
+                  <div class="work-stat">
+                    <span class="stat-value">₹40L+</span>
+                    <span class="stat-label">Monthly Rev</span>
+                  </div>
+                  <div class="work-stat">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">Custom Design</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-work-card">
+              <div class="work-card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="Aesthetic Meta Banner" class="work-card-img">
+                <div class="work-card-badge">Ad Graphics</div>
+              </div>
+              <div class="work-card-content">
+                <h3>High-Converting Infographic Banner Series</h3>
+                <p>A suite of educational banners designed for B2B tech clients, blending clean product mockups with glowing structural layout maps that drove direct signups.</p>
+                <div class="work-stats-row">
+                  <div class="work-stat">
+                    <span class="stat-value">3.8%</span>
+                    <span class="stat-label">Average CTR</span>
+                  </div>
+                  <div class="work-stat">
+                    <span class="stat-value">-35%</span>
+                    <span class="stat-label">Acq. Cost</span>
+                  </div>
+                  <div class="work-stat">
+                    <span class="stat-value">4K+</span>
+                    <span class="stat-label">Saves/Shares</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="service-work-card">
+              <div class="work-card-img-wrapper">
+                <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b" alt="Branding Layout and Web Banner" class="work-card-img">
+                <div class="work-card-badge">Web Creatives</div>
+              </div>
+              <div class="work-card-content">
+                <h3>Modern Web Creative Assets Collection</h3>
+                <p>Created stunning, interactive banner styles with glassmorphic layers and HSL gradients, optimizing user navigation and landing page conversion rates.</p>
+                <div class="work-stats-row">
+                  <div class="work-stat">
+                    <span class="stat-value">12.4%</span>
+                    <span class="stat-label">Conv. Rate</span>
+                  </div>
+                  <div class="work-stat">
+                    <span class="stat-value">+55%</span>
+                    <span class="stat-label">Dwell Time</span>
+                  </div>
+                  <div class="work-stat">
+                    <span class="stat-value">Modern</span>
+                    <span class="stat-label">UI Design</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA / Contact Section -->
+      <section class="cta">
+        <div class="container">
+          <h2>Need Beautiful, <span class="highlight">High-Converting Designs?</span></h2>
+          <p>Get premium creatives custom-designed for your brand and business scale today.</p>
+          <a href="mailto:hello@growthkarao.com?subject=Graphic%20Designing%20Inquiry" class="btn-primary large">Request Design Assets</a>
+        </div>
+      </section>
+
+      <footer class="footer-rich">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-col">
+              <div class="logo footer-logo">
+                <a href="index.html#home">GrowthKarao</a>
+              </div>
+              <p class="footer-tagline">We build scale. Delivering premium visual graphics, story-based video edits, and high-ROAS advertising campaigns for ambitious brands.</p>
+              <div class="footer-socials">
+                <a href="https://instagram.com/growthkarao" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                  <svg class="footer-social-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <div class="footer-col">
+              <h4>Quick Navigation</h4>
+              <ul class="footer-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#services">Our Services</a></li>
+                <li><a href="index.html#work">Selected Campaigns</a></li>
+                <li><a href="offers.html">Special Offers</a></li>
+                <li><a href="index.html#contact">Contact Us</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Growth Insights</h4>
+              <p>Subscribe to our weekly brand scaling letter containing our latest high-performing creative hooks.</p>
+              <form class="newsletter-form" id="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                <input type="email" class="newsletter-input" placeholder="Your work email" required>
+                <button type="submit" class="btn-primary newsletter-btn">Join</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>&copy; 2026 GrowthKarao. All rights reserved.</p>
+            <p>Designed for Next-Gen Scale</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
