@@ -1,128 +1,493 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GrowthKarao | Under Development</title>
+  <script>
+    (function () {
+      const theme = localStorage.getItem('theme') || 'light';
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
   <link rel="icon" type="image/svg+xml" href="growthkarao-favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GrowthKarao | Next-Gen Advertising Agency</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-color: #0f172a;
-      --text-color: #f8fafc;
-      --accent: #38bdf8;
-      --accent-glow: rgba(56, 189, 248, 0.4);
-    }
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      overflow: hidden;
-      position: relative;
-    }
-    .background-glow {
-      position: absolute;
-      width: 60vw;
-      height: 60vw;
-      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 0;
-      pointer-events: none;
-      filter: blur(100px);
-    }
-    .content {
-      z-index: 1;
-      text-align: center;
-      padding: 2rem;
-      max-width: 800px;
-    }
-    h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 4rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      background: linear-gradient(90deg, #f8fafc, #94a3b8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: fadeInDown 1s ease-out forwards;
-    }
-    p {
-      font-size: 1.25rem;
-      color: #cbd5e1;
-      line-height: 1.6;
-      margin-bottom: 2.5rem;
-      animation: fadeInUp 1s ease-out 0.3s forwards;
-      opacity: 0;
-    }
-    .loader {
-      display: inline-block;
-      width: 50px;
-      height: 50px;
-      border: 3px solid rgba(255,255,255,0.1);
-      border-radius: 50%;
-      border-top-color: var(--accent);
-      animation: spin 1s ease-in-out infinite, fadeIn 1s ease-out 0.6s forwards;
-      opacity: 0;
-    }
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    .social-links {
-      margin-top: 3rem;
-      opacity: 0;
-      animation: fadeIn 1s ease-out 0.9s forwards;
-    }
-    .social-links a {
-      color: var(--text-color);
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      transition: color 0.3s ease;
-    }
-    .social-links a:hover {
-      color: var(--accent);
-    }
-
-    @media (max-width: 768px) {
-      h1 { font-size: 2.5rem; }
-      p { font-size: 1.1rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="src/style.css" />
 </head>
+
 <body>
-  <div class="background-glow"></div>
-  <div class="content">
-    <h1>Under Development</h1>
-    <p>We're currently brewing up something extraordinary. GrowthKarao will be back online shortly with a completely revamped experience.</p>
-    <div class="loader"></div>
-    <div class="social-links">
-      <a href="https://instagram.com/growthkarao" target="_blank">Instagram</a>
-      <a href="mailto:hello@growthkarao.com">Contact Us</a>
-    </div>
+  <div id="app">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#home">GrowthKarao</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Our Work</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#address">Offices</a></li>
+        <li><a href="#contact" class="btn-primary">Let's Talk</a></li>
+
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <section id="home" class="hero">
+      <div class="container hero-container">
+        <div class="hero-content-left">
+          <span class="hero-eyebrow">DELHI NCR & UP &middot; PERFORMANCE MARKETING AGENCY</span>
+          <h1>We don't just build campaigns.<br><span class="highlight">We build growth.</span></h1>
+          <p class="hero-desc">GrowthKarao is a premium advertising agency driving measurable results through stunning creatives and data-driven Meta & Google Ads strategy &mdash; for brands ready to scale.</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn-primary large">Let's Talk</a>
+            <a href="#work" class="btn-secondary large">View Our Work</a>
+          </div>
+        </div>
+        <div class="hero-content-right">
+          <div class="hero-owner-bw-frame">
+            <img src="owner.jpg" alt="Founder of GrowthKarao" class="owner-img-bw">
+          </div>
+        </div>
+        
+        <div class="hero-footer-wrapper">
+          <hr class="hero-divider">
+          <div class="founder-horizontal-banner">
+            <div class="founder-avatar">RO</div>
+            <div class="founder-info">
+              <div class="founder-meta">
+                <span class="founder-name">Ritik Omer</span>
+                <span class="founder-role">&mdash; Founder, GrowthKarao</span>
+                <span class="founder-ex-meta">Ex-Meta Ads Strategist</span>
+              </div>
+              <ul class="founder-bullets">
+                <li><span>✔</span> 5+ Years Brand Scaling</li>
+                <li><span>✔</span> &#8377;50M+ Ad Spend Managed</li>
+                <li><span>✔</span> 120+ Campaigns Launched</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bg">
+        <div class="overlay"></div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <h3 class="counter-static">38+</h3>
+            <p>Clients Scaled</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="counter-static">&#8377;5.2Cr+</h3>
+            <p>Ad Spend Managed</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="counter-static">91%</h3>
+            <p>Client Retention</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="counter-static">4.6x</h3>
+            <p>Avg. Client ROAS</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="services" class="services">
+      <div class="container">
+        <div class="services-header">
+          <span class="services-eyebrow">OUR EXPERTISE</span>
+          <h2>Six disciplines, one growth engine</h2>
+          <p class="services-subtitle">Facebook, Instagram, Google, YouTube &mdash; har platform pe targeted strategy jo actual customers laaye, design se delivery tak.</p>
+        </div>
+        <div class="services-editorial-grid">
+          <!-- Card 1 -->
+          <a href="meta-ads.html" class="service-card service-editorial-card">
+            <span class="service-num">01</span>
+            <h3>Digital Marketing & Ads</h3>
+            <p>Har platform pe targeted ads jo actual customers laayein.</p>
+            <div class="service-editorial-tags">
+              <span>Facebook Ads</span>
+              <span>Google Ads</span>
+              <span>Lead Gen</span>
+              <span>Retargeting</span>
+            </div>
+          </a>
+          <!-- Card 2 -->
+          <a href="#contact" class="service-card service-editorial-card">
+            <span class="service-num">02</span>
+            <h3>Social Media Management</h3>
+            <p>Poora Instagram, Facebook, LinkedIn page handle karte hain &mdash; content, reels, engagement.</p>
+            <div class="service-editorial-tags">
+              <span>Reels & Posts</span>
+              <span>Follower Growth</span>
+              <span>Community</span>
+            </div>
+          </a>
+          <!-- Card 3 -->
+          <a href="design.html" class="service-card service-editorial-card">
+            <span class="service-num">03</span>
+            <h3>Branding & Identity</h3>
+            <p>Logo se lekar brand guide tak &mdash; identity jo market mein alag dikhaye.</p>
+            <div class="service-editorial-tags">
+              <span>Logo Design</span>
+              <span>Brand Guide</span>
+              <span>Brochure</span>
+            </div>
+          </a>
+          <!-- Card 4 -->
+          <a href="design.html" class="service-card service-editorial-card">
+            <span class="service-num">04</span>
+            <h3>Website & Online Presence</h3>
+            <p>Professional websites jo visitors ko customers mein convert karein &mdash; SEO ke saath.</p>
+            <div class="service-editorial-tags">
+              <span>Website Dev</span>
+              <span>Landing Pages</span>
+              <span>SEO</span>
+            </div>
+          </a>
+          <!-- Card 5 -->
+          <a href="video-editing.html" class="service-card service-editorial-card">
+            <span class="service-num">05</span>
+            <h3>Content Creation</h3>
+            <p>Photo shoots, video production, ad creatives &mdash; visual content jo brand ko powerful banaye.</p>
+            <div class="service-editorial-tags">
+              <span>Video Production</span>
+              <span>Ad Creatives</span>
+              <span>Thumbnails</span>
+            </div>
+          </a>
+          <!-- Card 6 -->
+          <a href="offers.html" class="service-card service-editorial-card">
+            <span class="service-num">06</span>
+            <h3>Strategy & Consulting</h3>
+            <p>Market research, competitor analysis, aur growth planning jo business ko next level le jaaye.</p>
+            <div class="service-editorial-tags">
+              <span>Market Research</span>
+              <span>Growth Plan</span>
+              <span>Consulting</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="work">
+      <div class="container">
+        <div class="work-header">
+          <span class="work-eyebrow">SELECTED CAMPAIGNS</span>
+          <h2>Results, not just creative</h2>
+          <p class="work-subtitle">Real numbers from real partner brands &mdash; every campaign tied to a measurable business outcome.</p>
+        </div>
+        <div class="editorial-campaigns-grid">
+          <!-- Card 1 -->
+          <div class="campaign-editorial-card">
+            <div class="campaign-metric-block">
+              <span>4.8x ROAS</span>
+            </div>
+            <div class="campaign-content-block">
+              <span class="campaign-category">META ADS &middot; B2B ACQUISITION</span>
+              <h3>Awadh Zeera: Masala Soda Scaling</h3>
+              <p>Distributor acquisition funnel + reel campaign that took a regional FMCG brand to multi-state retail.</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="campaign-editorial-card">
+            <div class="campaign-metric-block">
+              <span>-40% CAC</span>
+            </div>
+            <div class="campaign-content-block">
+              <span class="campaign-category">LEAD GEN &middot; EDUCATION</span>
+              <h3>Multi-Campus Admissions</h3>
+              <p>Demographic parent hooks + WhatsApp funnels cut student acquisition cost by 40% in one semester.</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="campaign-editorial-card">
+            <div class="campaign-metric-block">
+              <span>+350% Traffic</span>
+            </div>
+            <div class="campaign-content-block">
+              <span class="campaign-category">HYPER-LOCAL VIDEO</span>
+              <h3>Showroom Footfall Growth</h3>
+              <p>Localized video ad walkthroughs drove a 3.5x jump in store visits for an EV showroom client.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+      <div class="container">
+        <h2 style="text-align: center;">Our Growth <span class="highlight">Engine</span></h2>
+        <p class="section-subtitle" style="text-align: center;">A systematic, battle-tested 4-step framework we use to scale every partner brand.</p>
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-step">01</div>
+            <h3>Audit & Discovery</h3>
+            <p>Deep-dive analysis of your historical analytics, competitor performance, and current creative assets to find massive growth bottlenecks.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-step">02</div>
+            <h3>Creative Blueprinting</h3>
+            <p>Developing custom ad scripts, infograph banners, style frameworks, and hook tests engineered for high click-through rates.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-step">03</div>
+            <h3>Launch & Optimize</h3>
+            <p>Deploying structured target segments on Meta & Google Ads, launching hook tests, and adjusting bids daily based on conversion data.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-step">04</div>
+            <h3>Scale & Dominate</h3>
+            <p>Aggressively expanding budget allocation to winning creatives, establishing vertical channels, and scaling distributor networks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Logos Row -->
+    <section class="logos-section">
+      <div class="container">
+        <h3 class="logos-title">Trusted by Scaling Innovators</h3>
+        <div class="logos-grid">
+          <span class="logo-item">AWADH ZEERA</span>
+          <span class="logo-item">MOBILE SHOPS</span>
+          <span class="logo-item">LOCAL SHOPS</span>
+          <span class="logo-item">SCHOOLS & COLLEGES</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Grid -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 style="text-align: center;">What Our Partners <span class="highlight">Say</span></h2>
+        <p class="section-subtitle" style="text-align: center;">Real validation from founders and marketing executives who scaled their operations with us.</p>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div>
+              <div class="rating">★★★★★</div>
+              <p class="quote">"GrowthKarao completely transformed our lead pipeline. We went from a regional player to retail shelves statewide. The 4.8x ROAS was a massive game changer for our bottom line."</p>
+            </div>
+            <div class="client-info">
+              <img src="owner.jpg" alt="Rakesh Sharma" class="client-img" style="filter: hue-rotate(90deg) brightness(0.95);">
+              <div>
+                <span class="client-name">Rakesh Sharma</span>
+                <span class="client-company">CEO, Awadh Beverages</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="rating">★★★★★</div>
+              <p class="quote">"Their visual eye is second to none. We had generic stock images before. Ritik and his design team overhauled our assets, bringing direct sales lift of 3.4x on our spend."</p>
+            </div>
+            <div class="client-info">
+              <img src="owner.jpg" alt="Vikram Singh" class="client-img" style="filter: hue-rotate(180deg) brightness(0.95);">
+              <div>
+                <span class="client-name">Vikram Singh</span>
+                <span class="client-company">Founder, VogueX Brand</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="rating">★★★★★</div>
+              <p class="quote">"Student applications jumped by 150% in the first semester. By building demographic parent hooks and WhatsApp help funnels, they cut our student acquisition costs by 40%."</p>
+            </div>
+            <div class="client-info">
+              <img src="owner.jpg" alt="Dr. Ananya Mehta" class="client-img" style="filter: hue-rotate(270deg) brightness(0.95);">
+              <div>
+                <span class="client-name">Dr. Ananya Mehta</span>
+                <span class="client-company">Director, Athena Academics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="address" class="address-section">
+      <div class="container">
+        <h2 style="text-align: center;">Our <span class="highlight">Presence</span></h2>
+        <p class="section-subtitle" style="text-align: center;">We operate out of two regional hubs to support our nationwide digital campaigns.</p>
+        <div class="address-grid-condensed">
+          <div class="address-card-condensed">
+            <div class="location-icon-wrapper">📍</div>
+            <div class="address-details-condensed">
+              <h3>Corporate Office (Delhi NCR)</h3>
+              <p>GrowthKarao Corporate Space, M3M IFC, Sector 66, Gurugram, Haryana, India</p>
+              <a href="https://maps.google.com/?q=M3M+IFC+Gurugram" target="_blank" rel="noopener noreferrer" class="btn-map-link">View on Google Maps →</a>
+            </div>
+          </div>
+
+          <div class="address-card-condensed">
+            <div class="location-icon-wrapper">📍</div>
+            <div class="address-details-condensed">
+              <h3>Development HQ</h3>
+              <p>GrowthKarao HQ, Bindki, Fatehpur, Uttar Pradesh, India</p>
+              <a href="https://maps.google.com/?q=Bindki+Uttar+Pradesh+India" target="_blank" rel="noopener noreferrer" class="btn-map-link">View on Google Maps →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container contact-container-split">
+        <div class="contact-split-grid">
+          <!-- Left: Connect Channels -->
+          <div class="contact-split-col left-align">
+            <span class="contact-eyebrow">CONNECT HERE</span>
+            <h2>Let's talk growth</h2>
+            <p class="contact-desc">
+              Reach out directly or fill the form &mdash; we usually reply within a few hours on business days.
+            </p>
+            <div class="contact-channels-list">
+              <div class="contact-channel-row">
+                <div class="contact-channel-icon-circle">
+                  <!-- Email icon -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="contact-channel-details">
+                  <span class="channel-label">GENERAL INQUIRIES</span>
+                  <span class="channel-value"><a href="mailto:hello@growthkarao.com">hello@growthkarao.com</a></span>
+                </div>
+              </div>
+
+              <div class="contact-channel-row">
+                <div class="contact-channel-icon-circle">
+                  <!-- Phone icon -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div class="contact-channel-details">
+                  <span class="channel-label">DIRECT STRATEGY LINE</span>
+                  <span class="channel-value"><a href="tel:+919696798102">+91 96967 98102</a></span>
+                </div>
+              </div>
+
+              <div class="contact-channel-row">
+                <div class="contact-channel-icon-circle">
+                  <!-- WhatsApp / chat icon -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                </div>
+                <div class="contact-channel-details">
+                  <span class="channel-label">WHATSAPP</span>
+                  <span class="channel-value"><a href="https://wa.me/919696798102" target="_blank">Chat on WhatsApp</a></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-social-buttons">
+              <a href="https://instagram.com/growthkarao" target="_blank" class="btn-social-outline">Instagram</a>
+              <a href="https://youtube.com/@growthkarao" target="_blank" class="btn-social-outline">YouTube</a>
+            </div>
+          </div>
+
+          <!-- Right: Start Scaling Form -->
+          <div class="contact-split-col">
+            <div class="contact-form-container-editorial">
+              <form class="contact-form" id="contact-form-el">
+                <div class="form-group-editorial">
+                  <label for="form-name">Your Name</label>
+                  <input type="text" id="form-name" placeholder="Full name" required />
+                </div>
+                <div class="form-group-editorial">
+                  <label for="form-business">Business Type</label>
+                  <select id="form-business" required>
+                    <option value="" disabled selected>Select your industry</option>
+                    <option value="ecom">E-commerce / D2C</option>
+                    <option value="retail">Local Retail / Showroom</option>
+                    <option value="education">Education / Academics</option>
+                    <option value="b2b">B2B / Distributor</option>
+                    <option value="other">Other Brand</option>
+                  </select>
+                </div>
+                <div class="form-group-editorial">
+                  <label for="form-budget">Monthly Budget Range</label>
+                  <select id="form-budget" required>
+                    <option value="" disabled selected>Select budget range</option>
+                    <option value="low">Under &#8377;1 Lakh</option>
+                    <option value="mid">&#8377;1 Lakh - &#8377;5 Lakhs</option>
+                    <option value="high">&#8377;5 Lakhs - &#8377;10 Lakhs</option>
+                    <option value="scale">&#8377;10 Lakhs+</option>
+                  </select>
+                </div>
+                <div class="form-group-editorial">
+                  <label for="form-phone">Phone Number</label>
+                  <input type="tel" id="form-phone" placeholder="+91" required />
+                </div>
+                <button type="submit" class="btn-primary form-submit-btn-editorial">Send Inquiry</button>
+              </form>
+              <p class="form-footer-note">We'll get back to you within 24 hours. No spam, ever.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-rich">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="logo footer-logo">
+              <a href="#home">GrowthKarao</a>
+            </div>
+            <p class="footer-tagline">We build scale. Delivering premium visual graphics, story-based video edits, and high-ROAS advertising campaigns for ambitious brands.</p>
+            <div class="footer-socials">
+              <a href="https://instagram.com/growthkarao" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                <svg class="footer-social-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <div class="footer-col">
+            <h4>Quick Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#services">Our Services</a></li>
+              <li><a href="#work">Selected Campaigns</a></li>
+              <li><a href="offers.html">Special Offers</a></li>
+              <li><a href="#contact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Growth Insights</h4>
+            <p>Subscribe to our weekly brand scaling letter containing our latest high-performing creative hooks.</p>
+            <form class="newsletter-form" id="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+              <input type="email" class="newsletter-input" placeholder="Your work email" required>
+              <button type="submit" class="btn-primary newsletter-btn">Join</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 GrowthKarao. All rights reserved.</p>
+          <p>Designed for Next-Gen Scale</p>
+        </div>
+      </div>
+    </footer>
   </div>
+  <script type="module" src="src/main.js"></script>
 </body>
+
 </html>

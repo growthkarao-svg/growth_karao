@@ -6,6 +6,10 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './index.html',
+        design: './design.html',
+        metaAds: './meta-ads.html',
+        offers: './offers.html',
+        videoEditing: './video-editing.html',
       },
     },
   },
